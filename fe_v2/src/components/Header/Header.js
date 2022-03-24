@@ -16,7 +16,7 @@ import {
   DropdownMenu,
   DropdownItem,
   Form,
-  FormGroup,
+  FormGroup
 } from "reactstrap";
 
 import { logoutUser } from "../../actions/auth";
@@ -40,31 +40,31 @@ import userImg from "../../assets/user.svg";
 import s from "./Header.module.scss";
 import "animate.css";
 
-const Header = (props) => {
+const Header = props => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
 
   const toggleNotifications = () => {
     setNotificationsOpen(!notificationsOpen);
-  }
+  };
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-  }
+  };
 
   const toggleSidebar = () => {
     if (props.sidebarOpened) {
       props.dispatch(closeSidebar());
     } else {
-      const paths = props.location.pathname.split('/');
+      const paths = props.location.pathname.split("/");
       paths.pop();
       props.dispatch(openSidebar());
     }
-  }
+  };
 
   const doLogout = () => {
     props.dispatch(logoutUser());
-  }
+  };
 
   return (
     <Navbar className={`${s.root} d-print-none`}>
@@ -72,8 +72,7 @@ const Header = (props) => {
         <NavLink
           onClick={() => toggleSidebar()}
           className={`d-md-none mr-3 ${s.navItem}`}
-          href="#"
-        >
+          href="#">
           <MenuIcon className={s.menuIcon} />
         </NavLink>
       </div>
@@ -91,14 +90,14 @@ const Header = (props) => {
       </Form> */}
       <Nav className="ml-auto">
         <NavItem className="d-sm-none mr-4">
-         {/*  <NavLink
+          {/*  <NavLink
             className=""
             href="#"
           >
             <SearchIcon />
           </NavLink> */}
         </NavItem>
-       {/*  <Dropdown nav isOpen={menuOpen} toggle={() => toggleMenu()} className="tutorial-dropdown mr-2 mr-sm-3">
+        {/*  <Dropdown nav isOpen={menuOpen} toggle={() => toggleMenu()} className="tutorial-dropdown mr-2 mr-sm-3">
           <DropdownToggle nav>
             <div className={s.navbarBlock}>
               <i className={'eva eva-bell-outline'}/>
@@ -124,7 +123,7 @@ const Header = (props) => {
             <DropdownItem><img src={envelopeIcon} alt="Envelope Icon"/><span>you have 2 new messages</span></DropdownItem>
           </DropdownMenu>
         </Dropdown> */}
-       {/*  <Dropdown isOpen={notificationsOpen} toggle={() => toggleNotifications()} nav id="basic-nav-dropdown" className="ml-3">
+        {/*  <Dropdown isOpen={notificationsOpen} toggle={() => toggleNotifications()} nav id="basic-nav-dropdown" className="ml-3">
           <DropdownToggle nav caret className="navbar-dropdown-toggle">
             <span className={`${s.avatar} rounded-circle float-left mr-2`}>
               <img src={userImg} alt="User"/>
@@ -144,20 +143,19 @@ const Header = (props) => {
         </Dropdown> */}
       </Nav>
     </Navbar>
-  )
-}
+  );
+};
 
 Header.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  sidebarOpened: PropTypes.bool,
-}
+  sidebarOpened: PropTypes.bool
+};
 
 function mapStateToProps(store) {
   return {
     sidebarOpened: store.navigation.sidebarOpened,
-    sidebarStatic: store.navigation.sidebarStatic,
+    sidebarStatic: store.navigation.sidebarStatic
   };
 }
 
 export default withRouter(connect(mapStateToProps)(Header));
-

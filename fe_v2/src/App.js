@@ -27,35 +27,50 @@ import "./styles/app.scss";
 const PrivateRoute = ({ dispatch, component, ...rest }) => {
   if (!isAuthenticated(JSON.parse(localStorage.getItem("authenticated")))) {
     dispatch(logoutUser());
-    return (<Redirect to="/login" />)
+    return <Redirect to="/login" />;
   } else {
     return (
-      <Route {...rest} render={props => (React.createElement(component, props))} />
+      <Route
+        {...rest}
+        render={props => React.createElement(component, props)}
+      />
     );
   }
 };
 
-const App = (props) => {
+const App = props => {
   return (
     <div>
       <ToastContainer />
       <HashRouter>
         <Switch>
-          <Route path="/" exact render={() => <Redirect to="/template/dashboard" />} />
-          <PrivateRoute path="/" dispatch={props.dispatch} component={LayoutComponent} />
+          <Route
+            path="/"
+            exact
+            render={() => <Redirect to="/template/dashboard" />}
+          />
+          <PrivateRoute
+            path="/"
+            dispatch={props.dispatch}
+            component={LayoutComponent}
+          />
           <Route path="/login" exact component={Login} />
           <Route path="/error" exact component={ErrorPage} />
           <Route path="/register" exact component={Register} />
           <Route component={ErrorPage} />
-          <Route path='*' exact={true} render={() => <Redirect to="/error" />} />
+          <Route
+            path="*"
+            exact={true}
+            render={() => <Redirect to="/error" />}
+          />
         </Switch>
       </HashRouter>
     </div>
   );
-}
+};
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated,
+  isAuthenticated: state.auth.isAuthenticated
 });
 
 export default connect(mapStateToProps)(App);

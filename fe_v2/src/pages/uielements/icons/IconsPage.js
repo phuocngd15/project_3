@@ -7,7 +7,7 @@ import {
   TabPane,
   Nav,
   NavItem,
-  NavLink,
+  NavLink
 } from "reactstrap";
 import Widget from "../../../components/Widget/Widget";
 /* import * as Icons from "@material-ui/icons"; */
@@ -17,16 +17,14 @@ import "eva-icons/style/eva-icons.css";
 import s from "./IconsPage.module.scss";
 
 const IconsPage = () => {
+  const [activeTab, setActiveTab] = useState("1");
 
-  const [activeTab, setActiveTab] = useState('1')
-
-  const toggleTab = (tab) => {
+  const toggleTab = tab => {
     if (activeTab !== tab) {
-      setActiveTab(tab)
+      setActiveTab(tab);
     }
-  }
-  return <></>
-
-}
+  };
+  return <></>;
+};
 
 export default IconsPage;

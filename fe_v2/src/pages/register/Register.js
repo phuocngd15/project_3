@@ -9,7 +9,7 @@ import {
   Button,
   FormGroup,
   FormText,
-  Input,
+  Input
 } from "reactstrap";
 import Widget from "../../components/Widget/Widget.js";
 import Footer from "../../components/Footer/Footer.js";
@@ -24,27 +24,27 @@ import LinkedinIcon from "../../components/Icons/AuthIcons/LinkedinIcon.js";
 import { registerUser } from "../../actions/register.js";
 import hasToken from "../../services/authService";
 
-const Register = (props) => {
-  const [state, setState] = useState({ email: '', password: ''} )
+const Register = props => {
+  const [state, setState] = useState({ email: "", password: "" });
 
-  const changeCred = (event) => {
-    setState({ ...state, [event.target.name]: event.target.value })
-  }
+  const changeCred = event => {
+    setState({ ...state, [event.target.name]: event.target.value });
+  };
 
-  const doRegister = (event) => {
+  const doRegister = event => {
     event.preventDefault();
-    props.dispatch(registerUser({
-      creds: state,
-      history: props.history,
-    }))
-  }
-
-  const { from } = props.location.state || { from: { pathname: '/template' } }
-
-  if (hasToken(JSON.parse(localStorage.getItem('authenticated')))) {
-    return (
-      <Redirect to={from} />
+    props.dispatch(
+      registerUser({
+        creds: state,
+        history: props.history
+      })
     );
+  };
+
+  const { from } = props.location.state || { from: { pathname: "/template" } };
+
+  if (hasToken(JSON.parse(localStorage.getItem("authenticated")))) {
+    return <Redirect to={from} />;
   }
 
   return (
@@ -61,23 +61,26 @@ const Register = (props) => {
                 </div>
               </div>
               <div className="auth-info my-2">
-                <p>This is a real app with Node.js backend - use <b>"admin@flatlogic.com / password"</b> to login!</p>
+                <p>
+                  This is a real app with Node.js backend - use{" "}
+                  <b>"admin@flatlogic.com / password"</b> to login!
+                </p>
               </div>
-              <form onSubmit={(event => doRegister(event))}>
+              <form onSubmit={event => doRegister(event)}>
                 <FormGroup className="my-3">
                   <FormText>Email</FormText>
                   <Input
                     id="email"
                     className="input-transparent pl-3"
                     value={state.email}
-                    onChange={(event) => changeCred(event)}
+                    onChange={event => changeCred(event)}
                     type="email"
                     required
                     name="email"
                     placeholder="Henry Monk"
                   />
                 </FormGroup>
-                <FormGroup  className="my-3">
+                <FormGroup className="my-3">
                   <div className="d-flex justify-content-between">
                     <FormText>Password</FormText>
                     <Link to="/error">Forgot password?</Link>
@@ -86,7 +89,7 @@ const Register = (props) => {
                     id="password"
                     className="input-transparent pl-3"
                     value={state.password}
-                    onChange={(event => changeCred(event))}
+                    onChange={event => changeCred(event)}
                     type="password"
                     required
                     name="password"
@@ -94,17 +97,32 @@ const Register = (props) => {
                   />
                 </FormGroup>
                 <div className="bg-widget d-flex justify-content-center">
-                  <Button className="rounded-pill my-3" type="submit" color="secondary-red">Sign Up</Button>
+                  <Button
+                    className="rounded-pill my-3"
+                    type="submit"
+                    color="secondary-red">
+                    Sign Up
+                  </Button>
                 </div>
                 <p className="dividing-line my-3">&#8195;Or&#8195;</p>
                 <div className="d-flex align-items-center my-3">
                   <p className="social-label mb-0">Login with</p>
                   <div className="socials">
-                    <a href="https://flatlogic.com/"><GoogleIcon /></a>
-                    <a href="https://flatlogic.com/"><TwitterIcon /></a>
-                    <a href="https://flatlogic.com/"><FacebookIcon /></a>
-                    <a href="https://flatlogic.com/"><GithubIcon /></a>
-                    <a href="https://flatlogic.com/"><LinkedinIcon /></a>
+                    <a href="https://flatlogic.com/">
+                      <GoogleIcon />
+                    </a>
+                    <a href="https://flatlogic.com/">
+                      <TwitterIcon />
+                    </a>
+                    <a href="https://flatlogic.com/">
+                      <FacebookIcon />
+                    </a>
+                    <a href="https://flatlogic.com/">
+                      <GithubIcon />
+                    </a>
+                    <a href="https://flatlogic.com/">
+                      <LinkedinIcon />
+                    </a>
                   </div>
                 </div>
                 <Link to="/login">Enter the account</Link>
@@ -120,18 +138,18 @@ const Register = (props) => {
       </Container>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
 Register.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-}
+  dispatch: PropTypes.func.isRequired
+};
 
 function mapStateToProps(state) {
   return {
     isFetching: state.auth.isFetching,
     isAuthenticated: state.auth.isAuthenticated,
-    errorMessage: state.auth.errorMessage,
+    errorMessage: state.auth.errorMessage
   };
 }
 

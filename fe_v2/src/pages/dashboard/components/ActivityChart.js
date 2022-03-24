@@ -1,25 +1,27 @@
 import React from "react";
 import ApexCharts from "react-apexcharts";
 
-const series = [{
-  name: 'Your Activity',
-  type: 'column',
-  data: [350, 275, 375, 375, 300, 225, 275]
-}, {
-  name: 'Your Goal',
-  type: 'line',
-  data: [400, 350, 450, 400, 350, 300, 350]
-
-}];
+const series = [
+  {
+    name: "Your Activity",
+    type: "column",
+    data: [350, 275, 375, 375, 300, 225, 275]
+  },
+  {
+    name: "Your Goal",
+    type: "line",
+    data: [400, 350, 450, 400, 350, 300, 350]
+  }
+];
 
 const chartSettings = {
   colors: ["#FFCA41", "#43BC13"],
   chart: {
     height: 350,
-    type: 'line',
+    type: "line",
     toolbar: {
-      show: false,
-    },
+      show: false
+    }
   },
   stroke: {
     curve: "straight",
@@ -29,20 +31,20 @@ const chartSettings = {
     enabled: true,
     enabledOnSeries: [1],
     style: {
-      fontSize: '10px',
-      fontWeight: 500,
+      fontSize: "10px",
+      fontWeight: 500
     },
     background: {
-      borderWidth: 0,
-    },
+      borderWidth: 0
+    }
   },
   labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
   legend: {
     position: "top",
-    floating: true,
+    floating: true
   },
   xaxis: {
-    type: 'category',
+    type: "category",
     axisBorder: {
       show: false
     },
@@ -52,24 +54,24 @@ const chartSettings = {
     labels: {
       show: true,
       style: {
-        colors: "#6B859E",
-      },
-    },
+        colors: "#6B859E"
+      }
+    }
   },
   yaxis: {
-    show: false,
+    show: false
   },
   fill: {
     type: "solid",
-    opacity: 1,
+    opacity: 1
   },
   plotOptions: {
     bar: {
-      borderRadius: 10,
+      borderRadius: 10
     }
   },
   grid: {
-    show: false,
+    show: false
   }
 };
 
@@ -81,5 +83,5 @@ export default function ApexActivityChart() {
       type="area"
       height={275}
     />
-  )
+  );
 }

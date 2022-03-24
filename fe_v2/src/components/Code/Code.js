@@ -7,11 +7,7 @@ import s from "./Code.module.scss";
 const Code = ({ children }) => {
   return (
     <div className={s.codeContainer}>
-      <SyntaxHighlighter
-        className=""
-        language="javascript"
-        style={docco}
-      >
+      <SyntaxHighlighter className="" language="javascript" style={docco}>
         {children}
       </SyntaxHighlighter>
     </div>

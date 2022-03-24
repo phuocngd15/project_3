@@ -23,7 +23,7 @@ import Maps from "../../pages/uielements/maps/google/GoogleMapPage";
 import s from "./Layout.module.scss";
 import ACTIONS_LABELING_PAGE from "../../pages/ACTIONS_LABELING_PAGE/ACTIONS _LABELING_PAGE";
 
-const Layout = (props) => {
+const Layout = props => {
   return (
     <div className={s.root}>
       <div className={s.wrap}>
@@ -32,34 +32,46 @@ const Layout = (props) => {
         <main className={s.content}>
           <Breadcrumbs url={props.location.pathname} />
           <Switch>
-            <Route path="/ACTIONS MANAGEMENT" exact component={ACTION_MANAGEMENT} />
-            <Route path="/ACTIONS MANAGEMENT/ACTIONS LABELING" exact component={ACTIONS_LABELING_PAGE} />
+            <Route
+              path="/ACTIONS MANAGEMENT"
+              exact
+              component={ACTION_MANAGEMENT}
+            />
+            <Route
+              path="/ACTIONS MANAGEMENT/ACTIONS LABELING"
+              exact
+              component={ACTIONS_LABELING_PAGE}
+            />
             {/* <Route path="/template" exact render={() => <Redirect to="template/dashboard"/>} /> */}
-            <Route path="/dashboard" exact component={Dashboard}/>
-           
+            <Route path="/dashboard" exact component={Dashboard} />
+
             <Route path="/tables" exact component={Tables} />
             <Route path="/notifications" exact component={Notifications} />
-            <Route path="/ui-elements" exact render={() => <Redirect to={"/ui-elements/charts"} />} />
+            <Route
+              path="/ui-elements"
+              exact
+              render={() => <Redirect to={"/ui-elements/charts"} />}
+            />
             <Route path="/ui-elements/charts" exact component={Charts} />
             <Route path="/ui-elements/icons" exact component={Icons} />
             <Route path="/ui-elements/maps" exact component={Maps} />
-            <Route path='*' exact render={() => <Redirect to="/error" />} />
+            <Route path="*" exact render={() => <Redirect to="/error" />} />
           </Switch>
         </main>
         <Footer />
       </div>
     </div>
   );
-}
+};
 
 Layout.propTypes = {
   sidebarOpened: PropTypes.bool,
-  dispatch: PropTypes.func.isRequired,
-}
+  dispatch: PropTypes.func.isRequired
+};
 
 function mapStateToProps(store) {
   return {
-    sidebarOpened: store.navigation.sidebarOpened,
+    sidebarOpened: store.navigation.sidebarOpened
   };
 }
 

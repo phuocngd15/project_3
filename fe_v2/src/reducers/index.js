@@ -5,5 +5,5 @@ import auth from "./auth.js";
 
 export default combineReducers({
   auth,
-  navigation,
+  navigation
 });

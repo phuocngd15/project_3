@@ -7,25 +7,23 @@ import Dot from "../../../../components/Dot/Dot";
 const chartsSettings = {
   donut: {
     data: [
-      { name: 'Custom Classes', value: 300, color: '#FFC405' },
-      { name: 'Different Types', value: 400, color: '#FF5668' },
-      { name: 'Credit Card', value: 400, color: '#4D53E0' },
-    ],
+      { name: "Custom Classes", value: 300, color: "#FFC405" },
+      { name: "Different Types", value: 400, color: "#FF5668" },
+      { name: "Credit Card", value: 400, color: "#4D53E0" }
+    ]
   }
 };
 
 const RechartsPieChart = () => {
-
   return (
     <div style={{ height: "316px" }}>
       <ResponsiveContainer width="100%" height={200}>
-        <PieChart >
+        <PieChart>
           <Pie
             data={chartsSettings.donut.data}
             innerRadius={50}
             outerRadius={80}
-            dataKey="value"
-          >
+            dataKey="value">
             {chartsSettings.donut.data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={entry.color} />
             ))}
@@ -41,7 +39,7 @@ const RechartsPieChart = () => {
         ))}
       </div>
     </div>
-  )
+  );
 };
 
 export default RechartsPieChart;

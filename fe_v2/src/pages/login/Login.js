@@ -9,7 +9,7 @@ import {
   Button,
   FormGroup,
   FormText,
-  Input,
+  Input
 } from "reactstrap";
 import Widget from "../../components/Widget/Widget";
 import Footer from "../../components/Footer/Footer";
@@ -24,27 +24,24 @@ import FacebookIcon from "../../components/Icons/AuthIcons/FacebookIcon.js";
 import GithubIcon from "../../components/Icons/AuthIcons/GithubIcon.js";
 import LinkedinIcon from "../../components/Icons/AuthIcons/LinkedinIcon.js";
 
-const Login = (props) => {
-
+const Login = props => {
   const [state, setState] = useState({
-    email: 'admin@flatlogic.com',
-    password: 'password',
-  })
+    email: "admin@flatlogic.com",
+    password: "password"
+  });
 
-  const doLogin = (e) => {
+  const doLogin = e => {
     e.preventDefault();
-    props.dispatch(loginUser({ password: state.password, email: state.email }))
-  }
+    props.dispatch(loginUser({ password: state.password, email: state.email }));
+  };
 
-  const changeCreds = (event) => {
-    setState({ ...state, [event.target.name]: event.target.value })
-  }
+  const changeCreds = event => {
+    setState({ ...state, [event.target.name]: event.target.value });
+  };
 
-  const { from } = props.location.state || { from: { pathname: '/template' }};
-  if (hasToken(JSON.parse(localStorage.getItem('authenticated')))) {
-    return (
-      <Redirect to={from} />
-    )
+  const { from } = props.location.state || { from: { pathname: "/template" } };
+  if (hasToken(JSON.parse(localStorage.getItem("authenticated")))) {
+    return <Redirect to={from} />;
   }
 
   return (
@@ -61,23 +58,26 @@ const Login = (props) => {
                 </div>
               </div>
               <div className="auth-info my-2">
-                <p>This is a real app with Node.js backend - use <b>"admin@flatlogic.com / password"</b> to login!</p>
+                <p>
+                  This is a real app with Node.js backend - use{" "}
+                  <b>"admin@flatlogic.com / password"</b> to login!
+                </p>
               </div>
-              <form onSubmit={(event) => doLogin(event)}>
+              <form onSubmit={event => doLogin(event)}>
                 <FormGroup className="my-3">
                   <FormText>Email</FormText>
                   <Input
                     id="email"
                     className="input-transparent pl-3"
                     value={state.email}
-                    onChange={(event) => changeCreds(event)}
+                    onChange={event => changeCreds(event)}
                     type="email"
                     required
                     name="email"
                     placeholder="Email"
                   />
                 </FormGroup>
-                <FormGroup  className="my-3">
+                <FormGroup className="my-3">
                   <div className="d-flex justify-content-between">
                     <FormText>Password</FormText>
                     <Link to="/error">Forgot password?</Link>
@@ -86,7 +86,7 @@ const Login = (props) => {
                     id="password"
                     className="input-transparent pl-3"
                     value={state.password}
-                    onChange={(event) => changeCreds(event)}
+                    onChange={event => changeCreds(event)}
                     type="password"
                     required
                     name="password"
@@ -94,17 +94,32 @@ const Login = (props) => {
                   />
                 </FormGroup>
                 <div className="bg-widget d-flex justify-content-center">
-                  <Button className="rounded-pill my-3" type="submit" color="secondary-red">Login</Button>
+                  <Button
+                    className="rounded-pill my-3"
+                    type="submit"
+                    color="secondary-red">
+                    Login
+                  </Button>
                 </div>
                 <p className="dividing-line my-3">&#8195;Or&#8195;</p>
                 <div className="d-flex align-items-center my-3">
                   <p className="social-label mb-0">Login with</p>
                   <div className="socials">
-                    <a href="https://flatlogic.com/"><GoogleIcon /></a>
-                    <a href="https://flatlogic.com/"><TwitterIcon /></a>
-                    <a href="https://flatlogic.com/"><FacebookIcon /></a>
-                    <a href="https://flatlogic.com/"><GithubIcon /></a>
-                    <a href="https://flatlogic.com/"><LinkedinIcon /></a>
+                    <a href="https://flatlogic.com/">
+                      <GoogleIcon />
+                    </a>
+                    <a href="https://flatlogic.com/">
+                      <TwitterIcon />
+                    </a>
+                    <a href="https://flatlogic.com/">
+                      <FacebookIcon />
+                    </a>
+                    <a href="https://flatlogic.com/">
+                      <GithubIcon />
+                    </a>
+                    <a href="https://flatlogic.com/">
+                      <LinkedinIcon />
+                    </a>
                   </div>
                 </div>
                 <Link to="/register">Don’t have an account? Sign Up here</Link>
@@ -120,19 +135,18 @@ const Login = (props) => {
       </Container>
       <Footer />
     </div>
-  )
-}
-
+  );
+};
 
 Login.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-}
+  dispatch: PropTypes.func.isRequired
+};
 
 function mapStateToProps(state) {
   return {
     isFetching: state.auth.isFetching,
     isAuthenticated: state.auth.isAuthenticated,
-    errorMessage: state.auth.errorMessage,
+    errorMessage: state.auth.errorMessage
   };
 }
 

@@ -7,8 +7,6 @@ import folderIcon from "../../assets/tables/folderIcon.svg";
 import joystickIcon from "../../assets/tables/joystickIcon.svg";
 import basketIcon from "../../assets/tables/basketIcon.svg";
 
-
-
 const mock = {
   firstTable: [
     {
@@ -17,7 +15,7 @@ const mock = {
       name: "Jane Cooper",
       company: "Barrone LLC.",
       city: "Kalamazoo, MI",
-      state: "Michigan",
+      state: "Michigan"
     },
     {
       id: "checkbox112",
@@ -25,7 +23,7 @@ const mock = {
       name: "Ellie Smith",
       company: "Abstergo Ltd.",
       city: "Bainbridge Island, WA",
-      state: "Massachusetts",
+      state: "Massachusetts"
     },
     {
       id: "checkbox113",
@@ -33,7 +31,7 @@ const mock = {
       name: "Rosa Flores",
       company: "Binford Ltd.",
       city: "Leucadia, CA",
-      state: "Minnesota",
+      state: "Minnesota"
     },
     {
       id: "checkbox114",
@@ -41,7 +39,7 @@ const mock = {
       name: "Floyd Miles",
       company: "Biffco Enterprises Ltd.",
       city: "Idaho city, ID",
-      state: "North Dakota",
+      state: "North Dakota"
     },
     {
       id: "checkbox121",
@@ -49,7 +47,7 @@ const mock = {
       name: "Jake Jones",
       company: "Example LLC.",
       city: "Yonkers, NY",
-      state: "New York",
+      state: "New York"
     },
     {
       id: "checkbox122",
@@ -57,7 +55,7 @@ const mock = {
       name: "Selia Hani",
       company: "Example LLC.",
       city: "Dallas, TX",
-      state: "Texas",
+      state: "Texas"
     },
     {
       id: "checkbox123",
@@ -65,7 +63,7 @@ const mock = {
       name: "Rosa Flores",
       company: "Example LLC.",
       city: "Hartford, CT",
-      state: "Connecticut",
+      state: "Connecticut"
     },
     {
       id: "checkbox124",
@@ -73,7 +71,7 @@ const mock = {
       name: "Mary Elias",
       company: "Example LLC.",
       city: "Idaho city, ID",
-      state: "North Dakota",
+      state: "North Dakota"
     },
     {
       id: "checkbox131",
@@ -81,7 +79,7 @@ const mock = {
       name: "Julie Fischer",
       company: "Example LLC.",
       city: "Kalamazoo, MI",
-      state: "Michigan",
+      state: "Michigan"
     },
     {
       id: "checkbox132",
@@ -89,7 +87,7 @@ const mock = {
       name: "Ellie Smith",
       company: "Example LLC.",
       city: "Bainbridge Island, WA",
-      state: "Massachusetts",
+      state: "Massachusetts"
     },
     {
       id: "checkbox133",
@@ -97,7 +95,7 @@ const mock = {
       name: "Rosa Flores",
       company: "Example LLC.",
       city: "Leucadia, CA",
-      state: "Minnesota",
+      state: "Minnesota"
     },
     {
       id: "checkbox134",
@@ -105,7 +103,7 @@ const mock = {
       name: "Floyd Miles",
       company: "Example LLC.",
       city: "Idaho city, ID",
-      state: "North Dakota",
+      state: "North Dakota"
     },
     {
       id: "checkbox141",
@@ -113,7 +111,7 @@ const mock = {
       name: "Rosa Flores",
       company: "Example LLC.",
       city: "Hartford, CT",
-      state: "Connecticut",
+      state: "Connecticut"
     },
     {
       id: "checkbox142",
@@ -121,7 +119,7 @@ const mock = {
       name: "Selia Hani",
       company: "Example LLC.",
       city: "Dallas, TX",
-      state: "Texas",
+      state: "Texas"
     },
     {
       id: "checkbox143",
@@ -129,7 +127,7 @@ const mock = {
       name: "Julie Fischer",
       company: "Example LLC.",
       city: "Kalamazoo, MI",
-      state: "Michigan",
+      state: "Michigan"
     },
     {
       id: "checkbox144",
@@ -137,8 +135,8 @@ const mock = {
       name: "Floyd Miles",
       company: "Example LLC.",
       city: "Idaho city, ID",
-      state: "North Dakota",
-    },
+      state: "North Dakota"
+    }
   ],
   secondTable: [
     {
@@ -150,7 +148,7 @@ const mock = {
       date: "5/27/21",
       city: "Pembroke",
       color: "secondary-cyan",
-      status: "Sent",
+      status: "Sent"
     },
     {
       id: "checkbox212",
@@ -161,7 +159,7 @@ const mock = {
       date: "3/19/21",
       city: "Austin",
       color: "secondary-cyan",
-      status: "Sent",
+      status: "Sent"
     },
     {
       id: "checkbox213",
@@ -172,7 +170,7 @@ const mock = {
       date: "4/01/21",
       city: "Naperville",
       color: "secondary-yellow",
-      status: "Pending",
+      status: "Pending"
     },
     {
       id: "checkbox214",
@@ -183,7 +181,7 @@ const mock = {
       date: "4/27/21",
       city: "Fairfield",
       color: "secondary-red",
-      status: "Declined",
+      status: "Declined"
     },
     {
       id: "checkbox221",
@@ -194,7 +192,7 @@ const mock = {
       date: "4/27/21",
       city: "Fairfield",
       color: "secondary-cyan",
-      status: "Sent",
+      status: "Sent"
     },
     {
       id: "checkbox222",
@@ -205,7 +203,7 @@ const mock = {
       date: "4/27/21",
       city: "Fairfield",
       color: "secondary-red",
-      status: "Declined",
+      status: "Declined"
     },
     {
       id: "checkbox223",
@@ -216,7 +214,7 @@ const mock = {
       date: "4/27/21",
       city: "Fairfield",
       color: "secondary-yellow",
-      status: "Pending",
+      status: "Pending"
     },
     {
       id: "checkbox224",
@@ -227,7 +225,7 @@ const mock = {
       date: "4/27/21",
       city: "Fairfield",
       color: "secondary-cyan",
-      status: "Sent",
+      status: "Sent"
     },
     {
       id: "checkbox231",
@@ -238,7 +236,7 @@ const mock = {
       date: "4/27/21",
       city: "Fairfield",
       color: "secondary-red",
-      status: "Declined",
+      status: "Declined"
     },
     {
       id: "checkbox232",
@@ -249,7 +247,7 @@ const mock = {
       date: "4/27/21",
       city: "Fairfield",
       color: "secondary-cyan",
-      status: "Sent",
+      status: "Sent"
     },
     {
       id: "checkbox233",
@@ -260,7 +258,7 @@ const mock = {
       date: "4/27/21",
       city: "Fairfield",
       color: "secondary-yellow",
-      status: "Pending",
+      status: "Pending"
     },
     {
       id: "checkbox234",
@@ -271,7 +269,7 @@ const mock = {
       date: "4/27/21",
       city: "Fairfield",
       color: "secondary-cyan",
-      status: "Sent",
+      status: "Sent"
     },
     {
       id: "checkbox241",
@@ -282,7 +280,7 @@ const mock = {
       date: "4/27/21",
       city: "Fairfield",
       color: "secondary-red",
-      status: "Declined",
+      status: "Declined"
     },
     {
       id: "checkbox242",
@@ -293,7 +291,7 @@ const mock = {
       date: "3/19/21",
       city: "Austin",
       color: "secondary-cyan",
-      status: "Sent",
+      status: "Sent"
     },
     {
       id: "checkbox243",
@@ -304,7 +302,7 @@ const mock = {
       date: "4/27/21",
       city: "Fairfield",
       color: "secondary-yellow",
-      status: "Pending",
+      status: "Pending"
     },
     {
       id: "checkbox244",
@@ -315,8 +313,8 @@ const mock = {
       date: "3/19/21",
       city: "Austin",
       color: "secondary-cyan",
-      status: "Sent",
-    },
+      status: "Sent"
+    }
   ],
   transactionsWidget: [
     {
@@ -326,7 +324,7 @@ const mock = {
       date: "05 Jun 2020 10:00",
       price: "$300",
       description: "Some text",
-      dropdownOpen: false,
+      dropdownOpen: false
     },
     {
       id: 2,
@@ -335,7 +333,7 @@ const mock = {
       date: "05 Jun 2020 10:00",
       price: "$300",
       description: "Some text",
-      dropdownOpen: false,
+      dropdownOpen: false
     },
     {
       id: 3,
@@ -344,7 +342,7 @@ const mock = {
       date: "05 Jun 2020 10:00",
       price: "$300",
       description: "Some text",
-      dropdownOpen: false,
+      dropdownOpen: false
     },
     {
       id: 4,
@@ -353,7 +351,7 @@ const mock = {
       date: "05 Jun 2020 10:00",
       price: "$300",
       description: "Some text",
-      dropdownOpen: false,
+      dropdownOpen: false
     }
   ],
   tasksWidget: [
@@ -361,27 +359,27 @@ const mock = {
       id: 1,
       description: "Create An Image",
       time: "9 AM",
-      completed: false,
+      completed: false
     },
     {
       id: 2,
       description: "Team Design Miting",
       time: "11 AM",
-      completed: false,
+      completed: false
     },
     {
       id: 3,
       description: "Create An Image",
       time: "2.30 PM",
-      completed: false,
+      completed: false
     },
     {
       id: 4,
       description: "Interview With John Hamm",
       time: "4 PM",
-      completed: false,
-    },
+      completed: false
+    }
   ]
-}
+};
 
 export default mock;

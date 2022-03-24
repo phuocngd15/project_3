@@ -1,7 +1,7 @@
-const hasToken = (token) => {
+const hasToken = token => {
   if (token) {
-    return true
+    return true;
   }
-}
+};
 
 export default hasToken;
