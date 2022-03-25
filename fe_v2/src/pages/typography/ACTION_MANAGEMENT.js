@@ -1,5 +1,5 @@
 import React from "react";
-import { ADD_NEW_ACTION, SHOW_LIST_ACTIONS } from "./Partial_Views/Index";
+import { ADD_NEW_ACTION, SHOW_LIST_ACTIONS } from "./partialView/Index";
 
 const ACTION_MANAGEMENT = () => {
   return (

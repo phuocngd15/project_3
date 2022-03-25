@@ -61,7 +61,7 @@ const Sidebar = props => {
           link="/notifications"
           index="notifications"
         />
-{/*        <LinksGroup
+        {/*        <LinksGroup
           onActiveSidebarItemChange={activeItem =>
             props.dispatch(changeActiveSidebarItem(activeItem))
           }
