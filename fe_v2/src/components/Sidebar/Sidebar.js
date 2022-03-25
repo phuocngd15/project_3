@@ -8,6 +8,7 @@ import LinksGroup from "./LinksGroup/LinksGroup.js";
 import { changeActiveSidebarItem } from "../../actions/navigation.js";
 import SofiaLogo from "../Icons/SofiaLogo.js";
 import cn from "classnames";
+import {Model_management} from "../../pages/model_management_tab/model_management";
 
 const Sidebar = props => {
   const { activeItem = "", ...restProps } = props;
@@ -48,8 +49,8 @@ const Sidebar = props => {
           activeItem={props.activeItem}
           header="MODEL MANAGEMENT"
           isHeader
-          link="/tables"
-          index="tables"
+          link="/MODEL MANAGEMENT"
+          index="Model_management"
         />
         <LinksGroup
           onActiveSidebarItemChange={activeItem =>

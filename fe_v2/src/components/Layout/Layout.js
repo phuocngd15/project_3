@@ -12,7 +12,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import Footer from "../Footer/Footer";
 import Breadcrumbs from "../Breadbrumbs/Breadcrumbs";
 import Dashboard from "../../pages/dashboard/Dashboard";
-import ACTION_MANAGEMENT from "../../pages/typography/ACTION_MANAGEMENT";
+import ACTION_MANAGEMENT from "../../pages/action_management_tab/ACTION_MANAGEMENT";
 import Notifications from "../../pages/notifications/Notifications";
 import Tables from "../../pages/tables/Tables";
 import Charts from "../../pages/uielements/charts/Charts";
@@ -22,6 +22,7 @@ import Maps from "../../pages/uielements/maps/google/GoogleMapPage";
 // -- Component Styles
 import s from "./Layout.module.scss";
 import ACTIONS_LABELING_PAGE from "../../pages/ACTIONS_LABELING_PAGE/ACTIONS _LABELING_PAGE";
+import {Model_management} from "../../pages/model_management_tab/model_management";
 
 const Layout = props => {
   return (
@@ -45,7 +46,7 @@ const Layout = props => {
             {/* <Route path="/template" exact render={() => <Redirect to="template/dashboard"/>} /> */}
             <Route path="/dashboard" exact component={Dashboard} />
 
-            <Route path="/tables" exact component={Tables} />
+            <Route path="/MODEL MANAGEMENT" exact component={Model_management} />
             <Route path="/notifications" exact component={Notifications} />
             <Route
               path="/ui-elements"
