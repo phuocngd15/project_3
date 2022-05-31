@@ -12,7 +12,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import Footer from "../Footer/Footer";
 import Breadcrumbs from "../Breadbrumbs/Breadcrumbs";
 import Dashboard from "../../pages/dashboard/Dashboard";
-import ACTION_MANAGEMENT from "../../pages/action_management_tab/ACTION_MANAGEMENT";
+import ActionManagement from "../../pages/action_management_tab/ActionManagement";
 import Notifications from "../../pages/notifications/Notifications";
 import Tables from "../../pages/tables/Tables";
 import Charts from "../../pages/uielements/charts/Charts";
@@ -36,7 +36,7 @@ const Layout = props => {
             <Route
               path="/ACTIONS MANAGEMENT"
               exact
-              component={ACTION_MANAGEMENT}
+              component={ActionManagement}
             />
             <Route
               path="/ACTIONS MANAGEMENT/ACTIONS LABELING"

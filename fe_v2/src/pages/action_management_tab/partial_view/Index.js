@@ -1,4 +1,4 @@
-import { ADD_NEW_ACTION } from "./ADD_NEW_ACTION";
-import { SHOW_LIST_ACTIONS } from "./SHOW_LIST_ACTIONS";
+import { AddNewAction } from "./AddNewAction";
+import { BoardActions } from "./BoardActions";
 
-export { ADD_NEW_ACTION, SHOW_LIST_ACTIONS };
+export { AddNewAction, BoardActions };

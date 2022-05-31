@@ -1,6 +1,6 @@
 import React from "react";
 
-export const SIMPLE_VIDEO_PLAYER = () => {
+export const SimpleUploadVideo = () => {
   const inputRef = React.useRef();
 
   const [file, setFile] = React.useState();
