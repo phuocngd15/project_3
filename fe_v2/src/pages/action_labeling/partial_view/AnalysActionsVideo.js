@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import {Button} from "reactstrap";
-import {useHistory, useParams} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import {cloneDeep} from "lodash";
 import Select from "react-select";
 import TimeField from 'react-simple-timefield';
@@ -10,22 +10,21 @@ import duration from "dayjs/plugin/duration";
 import useLocalStorage from "../../../hook/useLocalStorage";
 
 
-export const Analys_actions_video = () => {
-    return <SimpleTable></SimpleTable>
+export const AnalysActionsVideo = () => {
+    return <SimpleTable/>
 };
 
 const SimpleTable = () => {
-    const [numberRow, setNumberRow] = useState([<Row key={1} index={1}></Row>]);
+    const [numberRow, setNumberRow] = useState([<Row key={1} index={1}/>]);
     const history = useHistory();
     const addRow = () => {
         var count = cloneDeep(numberRow);
         var length = count.length + 1;
-        count.push(<Row key={length} index={length}></Row>)
+        count.push(<Row key={length} index={length}/>)
         setNumberRow(count);
     }
     const removeRow = () => {
         var count = cloneDeep(numberRow);
-        var length = count.length + 1;
         count.pop();
         setNumberRow(count);
     }
@@ -67,7 +66,7 @@ const SimpleTable = () => {
         </div>)
 }
 const Row = ({index}) => {
-    const [actions, saveActions] = useLocalStorage("actions");
+    const [actions] = useLocalStorage("actions");
 
     const mapActionsToOptionsList = () => {
         const options = [];
@@ -91,19 +90,19 @@ const Row = ({index}) => {
         if (timeStart <= timeEnd) {
             dayjs.extend(duration)
             const [hours, minutes, seconds] = timeEnd.split(":")
-            var timeEnd = dayjs.duration({
+            var endd = dayjs.duration({
                 minutes: minutes,
                 hours: hours,
                 seconds: seconds
             });
 
             const [hours2, minutes2, seconds2] = timeStart.split(":")
-            var timeStart = dayjs.duration({
+            var startt = dayjs.duration({
                 minutes: minutes2,
                 hours: hours2,
                 seconds: seconds2
             });
-            var result = timeEnd.subtract(timeStart).format("HH:mm:ss").toString();
+            var result = endd.subtract(startt).format("HH:mm:ss").toString();
             console.log("result", result)
             setDurationTime(result);
         }
@@ -143,17 +142,20 @@ const Row = ({index}) => {
     )
 }
 
-const StyledTable = styled.table`
+export const StyledTable = styled.table`
   border-collapse: collapse;
   width: 100%;
 `;
-const StyledTh = styled.th`
+export const StyledTh = styled.th`
   border: 2px solid #c3cfd9;
   text-align: center;
   padding: 8px;
+  color: #16365f;
+  font-weight: 600;
 `
-const StyledTd = styled.td`
+export const StyledTd = styled.td`
   border: 2px solid #c3cfd9;
   text-align: center;
   padding: 8px;
+  color: #16365f;
 `

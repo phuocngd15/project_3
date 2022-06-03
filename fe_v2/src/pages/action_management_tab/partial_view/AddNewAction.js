@@ -11,12 +11,11 @@ export const AddNewAction = () => {
     const {
         register,
         handleSubmit,
-        watch,
-        formState: {errors}
+        formState: {}
     } = useForm();
     const history = useHistory();
     const [actionsName, setActionsName] = React.useState([]);
-    const [actions, saveActions] = useLocalStorage("actions");
+    const [, saveActions] = useLocalStorage("actions");
     const ListRowActionInput = ({data}) => {
         const listItems = data.map(ele => (
             <div className={"row"} key={v4()}>
@@ -60,7 +59,7 @@ export const AddNewAction = () => {
                 </ModalHeader>
                 <form>
                     <ModalBody>
-                        <ListRowActionInput data={actionsName}></ListRowActionInput>
+                        <ListRowActionInput data={actionsName}/>
                         <Button
                             color="primary"
                             onClick={() => {

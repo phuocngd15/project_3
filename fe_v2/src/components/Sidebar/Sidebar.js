@@ -46,7 +46,7 @@ const Sidebar = props => {
           header="MODEL MANAGEMENT"
           isHeader
           link="/MODEL MANAGEMENT"
-          index="Model_management"
+          index="ModelManagement"
         />
         <LinksGroup
           onActiveSidebarItemChange={activeItem =>

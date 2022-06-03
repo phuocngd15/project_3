@@ -1,21 +1,20 @@
 import React from "react";
 import {SimpleUploadVideo} from "./partial_view/SimpleUploadVideo";
-import {Analys_actions_video} from "./partial_view/analys_actions_video";
+import {AnalysActionsVideo} from "./partial_view/AnalysActionsVideo";
 import styled from "styled-components";
 
-
-const ACTIONS_LABELING_PAGE = () => {
+const ActionsLabelingPage = () => {
     return (
         <>
             <StyledContainer>
                 <SimpleUploadVideo/>
-                <Analys_actions_video/>
+                <AnalysActionsVideo/>
             </StyledContainer>
         </>
     );
 };
 
-export default ACTIONS_LABELING_PAGE;
+export default ActionsLabelingPage;
 
 const StyledContainer = styled.div`
   display: grid;
