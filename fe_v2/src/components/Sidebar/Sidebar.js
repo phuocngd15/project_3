@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Button } from "reactstrap";
 import { withRouter } from "react-router-dom";
 import s from "./Sidebar.module.scss";
 import LinksGroup from "./LinksGroup/LinksGroup.js";
 import { changeActiveSidebarItem } from "../../actions/navigation.js";
 import SofiaLogo from "../Icons/SofiaLogo.js";
 import cn from "classnames";
-import {Model_management} from "../../pages/model_management_tab/model_management";
 
 const Sidebar = props => {
-  const { activeItem = "", ...restProps } = props;
-
   const [burgerSidebarOpen, setBurgerSidebarOpen] = useState(false);
 
   useEffect(() => {
@@ -62,31 +58,6 @@ const Sidebar = props => {
           link="/notifications"
           index="notifications"
         />
-        {/*        <LinksGroup
-          onActiveSidebarItemChange={activeItem =>
-            props.dispatch(changeActiveSidebarItem(activeItem))
-          }
-          activeItem={props.activeItem}
-          header="UI Elements"
-          isHeader
-          iconName={<i className={"eva eva-cube-outline"} />}
-          link="/uielements"
-          index="uielements"
-          childrenLinks={[
-            {
-              header: "Charts",
-              link: "/ui-elements/charts"
-            },
-            {
-              header: "Icons",
-              link: "/ui-elements/icons"
-            },
-            {
-              header: "Google Maps",
-              link: "/ui-elements/maps"
-            }
-          ]}
-        />*/}
       </ul>
     </nav>
   );

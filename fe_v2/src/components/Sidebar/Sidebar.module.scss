@@ -13,7 +13,9 @@
   overflow-y: auto;
   transition: height 1s;
   transform: translateX(-$sidebar-width-open);
-
+  border-right-color: #c3cfd9;
+  border-right-style: solid;
+  border-right-width: 2px;
   @media print {
     display: none;
   }

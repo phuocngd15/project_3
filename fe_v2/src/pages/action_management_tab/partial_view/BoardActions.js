@@ -38,5 +38,5 @@ const StyledArticle = styled.div`
   display: flex;
   position: relative;
   padding: .5rem;
-  border: 1px solid #ced4da;
+  border: 2px solid #c3cfd9;
 `;

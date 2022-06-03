@@ -14,7 +14,6 @@ import Breadcrumbs from "../Breadbrumbs/Breadcrumbs";
 import Dashboard from "../../pages/dashboard/Dashboard";
 import ActionManagement from "../../pages/action_management_tab/ActionManagement";
 import Notifications from "../../pages/notifications/Notifications";
-import Tables from "../../pages/tables/Tables";
 import Charts from "../../pages/uielements/charts/Charts";
 import Icons from "../../pages/uielements/icons/IconsPage";
 import Maps from "../../pages/uielements/maps/google/GoogleMapPage";
