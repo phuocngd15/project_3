@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "dayjs": "^1.11.2",
-    "lodash": "^4.17.21",
-    "react-select": "^5.3.2",
-    "react-simple-timefield": "^3.2.5",
-    "react-toggle": "^4.1.2"
-  }
-}
