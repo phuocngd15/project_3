@@ -23,6 +23,7 @@ import s from "./Layout.module.scss";
 import ActionsLabelingPage from "../../pages/action_labeling/ActionsLabelingPage";
 import {ModelManagement} from "../../pages/model_management_tab/ModelManagement";
 import {ModelConfiguration} from "../../pages/model_config/ModelConfiguration";
+import {VideoAnalytics} from "../../pages/video_analytics/VideoAnalytics";
 
 const Layout = props => {
     return (
@@ -39,12 +40,13 @@ const Layout = props => {
                         <Route path="/dashboard" exact component={Dashboard}/>
                         <Route path="/MODEL MANAGEMENT" exact component={ModelManagement}/>
                         <Route path="/MODEL MANAGEMENT/MODEL CONFIGURATION" exact component={ModelConfiguration}/>
-                        <Route path="/notifications" exact component={Notifications}/>
+                        <Route path="/VIDEO ANALYTICS" exact component={VideoAnalytics}/>
+                       {/* <Route path="/notifications" exact component={Notifications}/>
                         <Route
                             path="/ui-elements"
                             exact
                             render={() => <Redirect to={"/ui-elements/charts"}/>}
-                        />
+                        />*/}
                         <Route path="/ui-elements/charts" exact component={Charts}/>
                         <Route path="/ui-elements/icons" exact component={Icons}/>
                         <Route path="/ui-elements/maps" exact component={Maps}/>

@@ -4,10 +4,12 @@ import "./toggle.scss"
 import {cloneDeep} from "lodash";
 import styled from "styled-components";
 import Select from "react-select";
-
+import {Button} from "reactstrap";
+import {useHistory} from "react-router-dom";
 const ModelConfiguration = () => {
     const defaultShowConfigAdvanced = false;
     const [showConfigAdvanced, setShowAdvanced] = useState(defaultShowConfigAdvanced);
+    const history =useHistory();
     return (<div>
         ModelConfiguration
         <BasicConfig/>
@@ -21,6 +23,16 @@ const ModelConfiguration = () => {
                     setShowAdvanced(!state)
                 }}/>
             {showConfigAdvanced && <AdvancedConfig/>}
+        </div>
+        <div>
+            <div className="d-flex flex-row-reverse bd-highlight ">
+                <Button color="primary" onClick={() => history.push("/VIDEO ANALYTICS")}>
+                     VIDEO ANALYTICS {">"}
+                </Button>
+                <Button color="primary" onClick={() => history.push("/MODEL MANAGEMENT")}>
+                    {"<"}  MODEL MANAGEMENT
+                </Button>
+            </div>
         </div>
     </div>)
 }
@@ -181,5 +193,7 @@ const ContainerGrid = styled.div`
 `
 
 export {
-    ModelConfiguration
+    ModelConfiguration,
+    ContainerGridColumn,
+    ContainerGrid
 }

@@ -55,8 +55,8 @@ const Sidebar = props => {
           activeItem={props.activeItem}
           header="VIDEO ANALYST"
           isHeader
-          link="/notifications"
-          index="notifications"
+          link="/VIDEO ANALYTICS"
+          index="VideoAnalytics"
         />
       </ul>
     </nav>
