@@ -1,6 +1,6 @@
 import React from "react";
 
-export const SimpleUploadVideo = () => {
+export const SimpleUploadVideo = ({buttonName="Upload video"}) => {
     const inputRef = React.useRef();
 
     const [file, setFile] = React.useState();
@@ -27,7 +27,7 @@ export const SimpleUploadVideo = () => {
                 accept=".mov,.mp4"
                 style={{display: "none"}}
             />
-            {!file && <button className="btn btn-primary" onClick={handleChoose}>Upload video</button>}
+            {!file && <button className="btn btn-primary" onClick={handleChoose}>{buttonName}</button>}
             {file && (
                 <video
                     className="VideoInput_video"
