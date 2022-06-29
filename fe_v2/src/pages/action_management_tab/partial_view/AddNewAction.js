@@ -14,7 +14,7 @@ export const AddNewAction = () => {
         formState: {}
     } = useForm();
     const history = useHistory();
-    const [actionsName, setActionsName] = React.useState([]);
+    const [actionsName, setActionsName] = React.useState([{}]);
     const [, saveActions] = useLocalStorage("actions");
     const ListRowActionInput = ({data}) => {
         const listItems = data.map(ele => (
